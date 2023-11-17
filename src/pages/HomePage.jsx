@@ -1,17 +1,18 @@
-import React from 'react';
 import NavBar from './NavBar';
 import Card from '../Components/Home/Card';
 import Subscribe from '../Components/Home/Subscribe';
 import WorkList from '../Components/Home/WorkList';
 import FeaturedProject from '../Components/Home/FeaturedProject';
+import { Helmet } from 'react-helmet';
 
-const HomePage = (props) => {
+const HomePage = () => {
     return (
         <NavBar>
-           <Card/>
-           <WorkList/>
-           <FeaturedProject/>
-            <Subscribe/>
+            <Helmet><title>Design Agency | Home</title></Helmet>
+            <Card />
+            <WorkList />
+            <FeaturedProject />
+            <Subscribe />
         </NavBar>
     );
 };
