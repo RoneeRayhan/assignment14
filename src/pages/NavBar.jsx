@@ -1,6 +1,7 @@
-import React from 'react';
+import PropTypes from "prop-types";
 import { NavLink } from 'react-router-dom';
 import Footer from './Footer';
+import './NavBar.css';
 
 const NavBar = (props) => {
     const navItem = [
@@ -11,9 +12,9 @@ const NavBar = (props) => {
         { name: "Testimonials", to: "/testimonials" }
     ];
     return (
-       
-        <>
-            <div className="navbar bg-slate-50 fixed top-0 z-50 ">
+
+        <nav>
+            <div id="nav" className="navbar bg-slate-50 fixed top-0 z-50 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -44,10 +45,14 @@ const NavBar = (props) => {
                 </div>
             </div>
             {props.children}
-            <Footer/>
-        </>
+            <Footer />
+        </nav>
 
     )
 };
+
+NavBar.propTypes = {
+    children: PropTypes.any
+}
 
 export default NavBar;
